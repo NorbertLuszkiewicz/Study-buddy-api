@@ -24,6 +24,10 @@ npm start
 
 Runs on localhost:4200 by default but can be configured using the `PORT` environment variable.
 
+### Documentation
+
+is automatically created after run, by default on: `http://localhost:4200/api-docs/`
+
 ### Running tests
 
 ```

@@ -5,7 +5,7 @@ import {
   addStudent,
   removeStudentClass,
 } from '../controllers/students.js';
-import AuthService from '../controllers/auth.js';
+import { login, register, getUser } from '../controllers/auth.js';
 import { getArticles, addArticle } from '../controllers/articles.js';
 import { addMessage, getMessages } from '../controllers/message.js';
 import { getTeacher } from '../controllers/teacher.js';
@@ -22,9 +22,9 @@ import { addNote, removeNote } from '../controllers/note.js';
 
 export const router = Router();
 
-router.put('/login', AuthService.login);
-router.post('/register', AuthService.register);
-router.put('/me', authMiddleware, AuthService.getUser);
+router.put('/login', login);
+router.post('/register', register);
+router.put('/me', authMiddleware, getUser);
 
 router.get('/articles', authMiddleware, getArticles);
 router.post('/articles', authMiddleware, addArticle);

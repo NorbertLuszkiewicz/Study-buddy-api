@@ -41,7 +41,7 @@ import { Teacher } from '../db/models/teacher/teacher.js';
  *         $ref: '#/components/responses/Forbidden'
  */
 
-const login = async (req, res) => {
+export const login = async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -110,7 +110,7 @@ const login = async (req, res) => {
  *         $ref: '#/components/responses/Forbidden'
  */
 
-const getUser = async (req, res) => {
+export const getUser = async (req, res) => {
   const { email } = req.body;
   if (!email) return;
   try {
@@ -184,7 +184,7 @@ const getUser = async (req, res) => {
  *         $ref: '#/components/responses/NotAcceptable'
  */
 
-const register = async (req, res) => {
+export const register = async (req, res) => {
   const { email, password, name, isTeacher } = req.body;
 
   const userData = {
@@ -217,5 +217,3 @@ const register = async (req, res) => {
     });
   }
 };
-
-export default { login, register, getUser };
